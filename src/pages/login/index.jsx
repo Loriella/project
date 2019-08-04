@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled, { css } from 'styled-components';
 
-import Input from '../../components/Input';
+import TextInput from '../../components/TextInput';
 
 const FlexContainer = styled.div`
   width: 100%;
@@ -34,7 +34,7 @@ const Title = styled.h1`
   font-size: 20px;
   font-weight: bold;
   text-align: center;
-  margin: 0;
+  margin: 0 0 8px;
 `;
 
 
@@ -70,16 +70,16 @@ class Login extends Component {
           <form action="">
             <div>
               <Title>Авторизация</Title>
-              <Input
-                title="Логин"
+              <TextInput
+                title="Логин:"
                 name="login"
                 inputValue={login}
                 handleChange={this.loginHandler}
                 placeholder="Введите логин"
               />
-              <Input
+              <TextInput
                 inputType="password"
-                title="Пароль"
+                title="Пароль:"
                 name="password"
                 inputValue={password}
                 handleChange={this.passwordHandler}
