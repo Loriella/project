@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import styled, { css } from 'styled-components';
 
+import Input from '../../components/Input';
+
 const FlexContainer = styled.div`
   width: 100%;
   height: 100%;
@@ -28,26 +30,61 @@ const LoginBox = styled(StyledBox)`
   padding: 32px 16px;
 `;
 
+const Title = styled.h1`
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+`;
+
+
 class Login extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      login: '',
+      password: '',
+    };
+    this.loginHandler = this.loginHandler.bind(this);
+    this.passwordHandler = this.passwordHandler.bind(this);
+  }
+
+  loginHandler(e) {
+    const loginValue = e.target.value;
+    this.setState({
+      login: loginValue,
+    });
+  }
+
+  passwordHandler(e) {
+    this.setState({
+      password: e.target.value,
+    });
+  }
+
   render() {
+    const { login, password } = this.state;
     return (
       <FlexContainer justify="center" align="center">
         <LoginBox colored minWidth="320px">
           <form action="">
             <div>
-              <h1>Авторизация</h1>
-              <div>
-                <label htmlFor="login">
-                  <div>Логин:</div>
-                  <input id="login" type="text" />
-                </label>
-              </div>
-              <div>
-                <label htmlFor="password">
-                  <div>Пароль:</div>
-                  <input id="password" type="password" />
-                </label>
-              </div>
+              <Title>Авторизация</Title>
+              <Input
+                title="Логин"
+                name="login"
+                inputValue={login}
+                handleChange={this.loginHandler}
+                placeholder="Введите логин"
+              />
+              <Input
+                inputType="password"
+                title="Пароль"
+                name="password"
+                inputValue={password}
+                handleChange={this.passwordHandler}
+                placeholder="Введите пароль"
+              />
               <button type="submit">Login</button>
             </div>
           </form>
