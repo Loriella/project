@@ -1,41 +1,11 @@
 import React, { Component } from 'react';
-import styled, { css } from 'styled-components';
 
 import TextInput from '../../components/TextInput';
-
-const FlexContainer = styled.div`
-  width: 100%;
-  height: 100%;
-  padding: 8px;
-  display: flex;
-  box-sizing: border-box;
-  
-  justify-content: ${props => props.justify || 'initial'};
-  align-items: ${props => props.align || 'initial'};
-`;
-
-const StyledBox = styled.div`
-  padding: 16px;
-  border: 1px solid #a1eaa4;
-  border-radius: 10px;
-  box-sizing: border-box;
-  
-  min-width: ${props => props.minWidth || 'initial'};
-  ${props => props.colored && css`
-    background: #edf8ed;
-  `}
-`;
-
-const LoginBox = styled(StyledBox)`
-  padding: 32px 16px;
-`;
-
-const Title = styled.h1`
-  font-size: 20px;
-  font-weight: bold;
-  text-align: center;
-  margin: 0 0 8px;
-`;
+import Button from '../../components/Button';
+import FlexContainer from '../../components/styled/FlexContainer';
+import StyledBox from '../../components/styled/StyledBox';
+import Title from '../../components/styled/Title';
+import ErrorText from '../../components/styled/ErrorText';
 
 
 class Login extends Component {
@@ -44,6 +14,7 @@ class Login extends Component {
     this.state = {
       login: '',
       password: '',
+      hasError: false,
     };
     this.loginHandler = this.loginHandler.bind(this);
     this.passwordHandler = this.passwordHandler.bind(this);
@@ -63,13 +34,14 @@ class Login extends Component {
   }
 
   render() {
-    const { login, password } = this.state;
+    const { login, password, hasError } = this.state;
     return (
       <FlexContainer justify="center" align="center">
-        <LoginBox colored minWidth="320px">
+        <StyledBox colored minWidth="320px">
           <form action="">
             <div>
               <Title>Авторизация</Title>
+              {hasError && <ErrorText>Неверно введен логин или пароль</ErrorText>}
               <TextInput
                 title="Логин:"
                 name="login"
@@ -85,14 +57,12 @@ class Login extends Component {
                 handleChange={this.passwordHandler}
                 placeholder="Введите пароль"
               />
-              <button type="submit">Login</button>
+              <Button
+                title="Войти"
+              />
             </div>
           </form>
-          <div>
-            <p>Нет аккаунта?</p>
-            <a href="/">Зарегистрироваться</a>
-          </div>
-        </LoginBox>
+        </StyledBox>
       </FlexContainer>
     );
   }
