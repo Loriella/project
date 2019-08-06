@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 const StyledBox = styled.div`
-  padding: 16px;
+  padding: 8px 16px;
   border: 1px solid #a1eaa4;
   border-radius: 10px;
   box-sizing: border-box;

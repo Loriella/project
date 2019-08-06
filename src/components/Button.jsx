@@ -7,7 +7,7 @@ const PrimaryButton = styled.button`
   border: 1px solid #a1eaa4;
   border-radius: 10px;
   width: 100%;
-  padding: 12px 8px;
+  padding: 8px;
   font-size: 15px;
   font-weight: bold;
   margin: 16px 0;
