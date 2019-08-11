@@ -40,12 +40,13 @@ TextInput.propTypes = {
   errorMessage: PropTypes.string,
 
   handleChange: PropTypes.func.isRequired,
-  handleBlur: PropTypes.func.isRequired,
+  handleBlur: PropTypes.func,
 };
 TextInput.defaultProps = {
   placeholder: '',
   inputType: 'text',
   errorMessage: '',
+  handleBlur: () => null,
 };
 
 export default TextInput;
