@@ -1,12 +1,17 @@
 /* eslint-disable jsx-a11y/label-has-for */
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import InputTitle from './styled/InputTitle';
 import Input from './styled/Input';
+import ErrorText from './styled/ErrorText';
 
+const ErrorTextMessage = styled(ErrorText)`
+  margin-left: 8px;
+`;
 
 const TextInput = ({
-  inputType, name, placeholder, inputValue, handleChange, title, ...props
+  inputType, name, placeholder, inputValue, handleChange, title, errorMessage, handleBlur, ...props
 }) => (
   <div>
     <label htmlFor={name}>
@@ -17,10 +22,12 @@ const TextInput = ({
         type={inputType}
         value={inputValue}
         onChange={handleChange}
+        onBlur={handleBlur}
         placeholder={placeholder}
         {...props}
       />
     </label>
+    {errorMessage && <ErrorTextMessage size="10px">{errorMessage}</ErrorTextMessage>}
   </div>
 );
 
@@ -30,12 +37,15 @@ TextInput.propTypes = {
   inputValue: PropTypes.string.isRequired,
   inputType: PropTypes.string,
   placeholder: PropTypes.string,
+  errorMessage: PropTypes.string,
 
   handleChange: PropTypes.func.isRequired,
+  handleBlur: PropTypes.func.isRequired,
 };
 TextInput.defaultProps = {
   placeholder: '',
   inputType: 'text',
+  errorMessage: '',
 };
 
 export default TextInput;
