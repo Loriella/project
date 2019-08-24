@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 import Menu from '../../components/Menu';
+import ProfilePhoto from '../../components/ProfilePhoto';
 import StyledBox from '../../components/styled/StyledBox';
 
 const ProfileBox = styled(StyledBox)`
@@ -34,11 +35,6 @@ const StyledBoxMini = styled(StyledBox)`
   :last-child {
     margin-bottom: 8px;
   }
-`;
-
-const ImageBox = styled.div`
-  width: 200px;
-  height: 270px;
 `;
 
 const Profile = styled.section`
@@ -86,7 +82,7 @@ class UserPage extends Component {
         <FlexContainer>
           <LeftColumn>
             <StyledBoxMini>
-              <ImageBox />
+              <ProfilePhoto />
             </StyledBoxMini>
             <StyledBoxMini>
               <Menu />
