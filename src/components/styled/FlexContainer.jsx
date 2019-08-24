@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const FlexContainer = styled.div`
   width: 100%;
   height: 100%;
-  padding: 8px;
+  padding: 0;
   display: flex;
   box-sizing: border-box;
   

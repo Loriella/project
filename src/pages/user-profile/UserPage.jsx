@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Menu from '../../components/Menu';
 import ProfilePhoto from '../../components/ProfilePhoto';
 import Profile from '../../components/Profile';
+import AboutMyself from '../../components/AboutMyself';
 
 import StyledBox from '../../components/styled/StyledBox';
 
@@ -39,18 +40,10 @@ const StyledBoxMini = styled(StyledBox)`
   }
 `;
 
-const AboutMyself = styled.section`
-   margin: 8px;
-`;
-
 const SectionTitle = styled.h2`
   font-size: 14px;
   margin: 6px 0;
   width: 100%;
-`;
-
-const AboutMyselfText = styled.div`
-  font-size: 14px;
 `;
 
 const Gallery = styled.section`
@@ -85,19 +78,7 @@ class UserPage extends Component {
               <Profile />
             </StyledBoxMini>
             <StyledBoxMini>
-              <AboutMyself>
-                <FlexContainer>
-                  <SectionTitle>О себе:</SectionTitle>
-                  <button type="button">Редактировать</button>
-                </FlexContainer>
-                <AboutMyselfText>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Aspernatur cumque cupiditate doloribus
-                  dolorum eligendi, eum explicabo fuga harum id ipsa
-                  modi nam neque nisi officiis optio qui quidem,
-                  ullam velit.
-                </AboutMyselfText>
-              </AboutMyself>
+              <AboutMyself />
             </StyledBoxMini>
             <StyledBoxMini>
               <Gallery>
