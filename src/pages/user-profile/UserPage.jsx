@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
+import Menu from '../../components/Menu';
 import StyledBox from '../../components/styled/StyledBox';
 
 const ProfileBox = styled(StyledBox)`
@@ -25,6 +26,7 @@ const Header = styled(StyledBox)`
 
 const StyledBoxMini = styled(StyledBox)`
   margin: 16px 8px;
+  padding: 0;
   
   :first-child {
     margin-top: 0;
@@ -37,11 +39,6 @@ const StyledBoxMini = styled(StyledBox)`
 const ImageBox = styled.div`
   width: 200px;
   height: 270px;
-`;
-
-const MenuBox = styled.div`
-  width: 200px;
-  height: 300px;
 `;
 
 const Profile = styled.section`
@@ -92,7 +89,7 @@ class UserPage extends Component {
               <ImageBox />
             </StyledBoxMini>
             <StyledBoxMini>
-              <MenuBox />
+              <Menu />
             </StyledBoxMini>
           </LeftColumn>
           <RightColumn>
