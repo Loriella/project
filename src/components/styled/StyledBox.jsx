@@ -6,6 +6,8 @@ const StyledBox = styled.div`
   border-radius: 10px;
   box-sizing: border-box;
   background: #ffffff;
+  overflow: hidden;
+
   
   max-width: ${props => props.maxWidth || 'initial'};
   min-width: ${props => props.minWidth || 'initial'};
