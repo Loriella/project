@@ -3,6 +3,8 @@ import styled from 'styled-components';
 
 import Menu from '../../components/Menu';
 import ProfilePhoto from '../../components/ProfilePhoto';
+import Profile from '../../components/Profile';
+
 import StyledBox from '../../components/styled/StyledBox';
 
 const ProfileBox = styled(StyledBox)`
@@ -35,16 +37,6 @@ const StyledBoxMini = styled(StyledBox)`
   :last-child {
     margin-bottom: 8px;
   }
-`;
-
-const Profile = styled.section`
- font-size: 14px;
- margin: 8px;
-`;
-
-const UserName = styled.h2`
-  font-size: 16px;
-  margin: 6px 0;
 `;
 
 const AboutMyself = styled.section`
@@ -90,12 +82,7 @@ class UserPage extends Component {
           </LeftColumn>
           <RightColumn>
             <StyledBoxMini>
-              <Profile>
-                <UserName>Фамилия Имя Отчество</UserName>
-                <div>День рождения: 29 февраля 1985</div>
-                <div>Пол: мужской</div>
-                <div>Город: Москва</div>
-              </Profile>
+              <Profile />
             </StyledBoxMini>
             <StyledBoxMini>
               <AboutMyself>
