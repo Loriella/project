@@ -5,6 +5,7 @@ import Menu from '../../components/Menu';
 import ProfilePhoto from '../../components/ProfilePhoto';
 import Profile from '../../components/Profile';
 import AboutMyself from '../../components/AboutMyself';
+import Search from '../../components/Search';
 import Gallery from '../../components/Gallery';
 
 import StyledBox from '../../components/styled/StyledBox';
@@ -27,6 +28,9 @@ const RightColumn = styled.main`
 
 const Header = styled(StyledBox)`
   margin: 8px 8px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 const StyledBoxMini = styled(StyledBox)`
@@ -51,14 +55,14 @@ const Wall = styled.section`
   margin: 8px;
 `;
 
-
 // eslint-disable-next-line react/prefer-stateless-function
 class UserPage extends Component {
   render() {
     return (
       <ProfileBox colored maxWidth="960px">
         <Header>
-          <input type="search" />
+          <div>Logo</div>
+          <Search />
         </Header>
         <FlexContainer>
           <LeftColumn>
