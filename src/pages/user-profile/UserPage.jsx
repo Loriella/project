@@ -5,6 +5,7 @@ import Menu from '../../components/Menu';
 import ProfilePhoto from '../../components/ProfilePhoto';
 import Profile from '../../components/Profile';
 import AboutMyself from '../../components/AboutMyself';
+import Gallery from '../../components/Gallery';
 
 import StyledBox from '../../components/styled/StyledBox';
 
@@ -46,11 +47,6 @@ const SectionTitle = styled.h2`
   width: 100%;
 `;
 
-const Gallery = styled.section`
-  height: 158px;
-  margin: 8px;
-`;
-
 const Wall = styled.section`
   margin: 8px;
 `;
@@ -81,9 +77,7 @@ class UserPage extends Component {
               <AboutMyself />
             </StyledBoxMini>
             <StyledBoxMini>
-              <Gallery>
-                <SectionTitle>Галерея</SectionTitle>
-              </Gallery>
+              <Gallery />
             </StyledBoxMini>
             <StyledBoxMini>
               <Wall>
