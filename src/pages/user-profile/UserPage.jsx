@@ -7,6 +7,7 @@ import Profile from '../../components/Profile';
 import AboutMyself from '../../components/AboutMyself';
 import Search from '../../components/Search';
 import Gallery from '../../components/Gallery';
+import Wall from '../../components/Wall';
 
 import StyledBox from '../../components/styled/StyledBox';
 
@@ -45,16 +46,6 @@ const StyledBoxMini = styled(StyledBox)`
   }
 `;
 
-const SectionTitle = styled.h2`
-  font-size: 14px;
-  margin: 6px 0;
-  width: 100%;
-`;
-
-const Wall = styled.section`
-  margin: 8px;
-`;
-
 // eslint-disable-next-line react/prefer-stateless-function
 class UserPage extends Component {
   render() {
@@ -84,9 +75,7 @@ class UserPage extends Component {
               <Gallery />
             </StyledBoxMini>
             <StyledBoxMini>
-              <Wall>
-                <SectionTitle>Стена:</SectionTitle>
-              </Wall>
+              <Wall />
             </StyledBoxMini>
           </RightColumn>
         </FlexContainer>
