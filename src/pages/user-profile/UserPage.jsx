@@ -5,9 +5,9 @@ import Menu from '../../components/Menu';
 import ProfilePhoto from '../../components/ProfilePhoto';
 import Profile from '../../components/Profile';
 import AboutMyself from '../../components/AboutMyself';
-import Search from '../../components/Search';
 import Gallery from '../../components/Gallery';
 import Wall from '../../components/Wall';
+import Header from '../../components/Header';
 
 import StyledBox from '../../components/styled/StyledBox';
 
@@ -27,13 +27,6 @@ const RightColumn = styled.main`
   width: 100%;
 `;
 
-const Header = styled(StyledBox)`
-  margin: 8px 8px 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
-
 const StyledBoxMini = styled(StyledBox)`
   margin: 16px 8px;
   padding: 0;
@@ -51,10 +44,7 @@ class UserPage extends Component {
   render() {
     return (
       <ProfileBox colored maxWidth="960px">
-        <Header>
-          <div>Logo</div>
-          <Search />
-        </Header>
+        <Header />
         <FlexContainer>
           <LeftColumn>
             <StyledBoxMini>
