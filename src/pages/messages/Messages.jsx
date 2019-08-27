@@ -32,6 +32,7 @@ const MessagesList = styled.ul`
     }
     .author {
       font-size: 14px;
+      font-weight: 500;
     }
     .answerAuthor {
       color: #a1eaa4;
@@ -42,7 +43,7 @@ const MessagesList = styled.ul`
     }
     .textMessage {
       font-size: 14px;
-      padding: 8px;
+      padding: 0 16px 8px;
     }
     .new {
       background-color:#edf8ed;
@@ -60,7 +61,8 @@ const Messages = props => (
             <div className="author">Зеленкин Петр</div>
             <div className="date">25 августа</div>
           </div>
-          <div className="textMessage new">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          <div className="textMessage new">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
             Aspernatur cumque cupiditate doloribus
             dolorum eligendi, eum explicabo fuga harum id ipsa
           </div>
@@ -70,7 +72,8 @@ const Messages = props => (
             <div className="author">Зеленкин Петр</div>
             <div className="date">25 августа</div>
           </div>
-          <div className="textMessage">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          <div className="textMessage">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
             Aspernatur cumque cupiditate doloribus
             dolorum eligendi, eum explicabo fuga harum id ipsa
             Aspernatur cumque cupiditate doloribus
@@ -82,7 +85,8 @@ const Messages = props => (
             <div className="author">Зеленкин Петр</div>
             <div className="date">25 августа</div>
           </div>
-          <div className="textMessage">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          <div className="textMessage">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
             Aspernatur cumque cupiditate doloribus
             Aspernatur cumque cupiditate doloribus
             dolorum eligendi, eum explicabo fuga harum id ipsa
@@ -91,7 +95,8 @@ const Messages = props => (
             <div className="author answerAuthor">Иванов Василий</div>
             <div className="date">25 августа</div>
           </div>
-          <div className="textMessage">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          <div className="textMessage">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
             Aspernatur cumque cupiditate doloribus
             Aspernatur cumque cupiditate doloribus
             dolorum eligendi, eum explicabo fuga harum id ipsa
