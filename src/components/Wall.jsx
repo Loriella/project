@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import FlexContainer from './styled/FlexContainer';
+import Button from './Button';
 
 
 const WallContainer = styled.section`
@@ -68,6 +69,58 @@ const NotePhoto = styled.div`
   }
 `;
 
+const NoteEditor = styled.div`
+  border: 1px solid #a1eaa4;
+  border-radius: 12px;
+  padding: 16px;
+  
+    .width {
+      width: 200px;
+    }
+`;
+
+const NoteEditorText = styled(NoteText)`
+  border: 1px solid #a1eaa4;
+  border-radius: 12px;
+  margin: 8px 0;
+  padding: 8px;
+
+`;
+
+const AddPhoto = styled.button`
+  border: 1px solid #a1eaa4;
+  border-radius: 12px;
+  padding: 8px 8px 8px 30px;
+  background-color: #a1eaa4;
+  font-size: 15px;
+  font-weight: bold;
+  vertical-align: middle;
+  position: relative;
+  
+  img {
+    width: 18px;
+    position: absolute;
+    left: 24px;
+    top: 6px;
+  }
+  outline: none;
+  
+  :hover {
+    background: linear-gradient(#a1eaa4, #f0f0f0);
+    transition: background .5s ease-in-out;
+  }
+  
+  :active {
+    background: #F0F0F0;
+    box-shadow: inset 0 0 3px 4px rgba(161,234,164,0.55);
+    transition: all .3s ease-in-out;
+  }
+  
+  :focus {
+    box-shadow: 0 0 3px 2px rgba(161,234,164,0.55);
+  }
+`;
+
 const Wall = props => (
   <WallContainer>
     <div className="wallHeader">
@@ -121,6 +174,22 @@ const Wall = props => (
         <img src="https://i.pinimg.com/736x/2d/dc/25/2ddc25914e2ae0db5311ffa41781dda1.jpg" />
       </NotePhoto>
     </NoteBox>
+    <NoteEditor>
+      <NoteTitle>
+        Зеленкин Петр Иванович
+        <PublicationDate />
+      </NoteTitle>
+      <NoteEditorText>
+        Чем хотите поделиться?
+      </NoteEditorText>
+      <FlexContainer align="center" justify="space-between">
+        <AddPhoto className="width">
+          <img src="/img/camera.svg" />&nbsp;
+          Добавить фото
+        </AddPhoto>
+        <Button title="Поделиться" className="width" />
+      </FlexContainer>
+    </NoteEditor>
   </WallContainer>
 );
 
